@@ -1,0 +1,50 @@
+#include <iostream>
+#include <string>
+
+
+int randnum = rand() % 10 + 1;
+char userinp = 'x'
+;
+
+void Action(){
+
+    if(randnum<5){
+        std::cout << "Press J to Jump\n";
+        std::cin >> userinp;
+        if (userinp == 'j'){
+            std::cout << "\n Success\n";
+            randnum +=1;
+            randnum = randnum%10;
+            Action();
+        }
+        else{
+            std::cout << "\n Failure. Game over";
+        }
+    }
+    else {
+        std::cout << "Press d to duck\n";
+        std::cin >> userinp;
+        if (userinp == 'd'){
+            std::cout << "Success! \n";
+            randnum+=1;
+            randnum = randnum%10;
+            Action();
+        }
+        else {
+            std::cout << "\nFail! Game over!";
+        }
+    }
+
+}
+
+
+
+int main() {
+
+
+
+
+    std::cout << "Welcome to Jump and Duck!\n ";
+    Action();
+    return 0;
+}
